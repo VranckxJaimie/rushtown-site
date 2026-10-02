@@ -1,0 +1,62 @@
+/* One readable column: the game's cream card on its warm ground */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;800&display=swap");
+
+:root {
+  --ground: #f3eadb;
+  --card: #fff8ec;
+  --ink: #5a3a1e;
+  --muted: #8a6a48;
+  --accent: #c8662c;
+  --line: #eadcc2;
+  --note: #fde9d6;
+  --display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1f1813; --card: #2a211a; --ink: #f3e6d2; --muted: #c4a888;
+    --accent: #f09a62; --line: #3d3027; --note: #3a2a1e; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 32px 16px 48px;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(20px, 5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+header { display: flex; flex-direction: column; gap: 6px; }
+.game { font-family: var(--display); font-weight: 600; color: var(--accent); font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin: 0; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 0; }
+.meta { color: var(--muted); font-size: 14px; margin: 0; }
+.summary { background: var(--note); border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.summary strong { font-family: var(--display); font-weight: 600; font-size: 18px; }
+section { display: flex; flex-direction: column; gap: 8px; }
+p, li { margin: 0; max-width: 65ch; }
+.stored { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr); gap: 8px 16px; margin: 4px 0 0; }
+.stored dt { font-weight: 800; }
+.stored dd { margin: 0; }
+@media (max-width: 520px) { .stored { grid-template-columns: minmax(0, 1fr); } .stored dd { margin-bottom: 8px; } }
+a { color: var(--accent); text-underline-offset: 3px; }
+.contact { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+.addr { font-weight: 800; }
+.home { align-items: center; text-align: center; }
+.home .logo { width: min(420px, 100%); height: auto; }
+.lead { font-family: var(--display); font-weight: 600; font-size: 22px; }
+.links { list-style: none; padding: 0; margin: 0; display: flex; gap: 24px; font-weight: 800; }
