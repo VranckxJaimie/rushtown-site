@@ -44,6 +44,8 @@
       <dd>When a player reports a message, we keep the report, the reporter's account ID and a copy of the message with up to 5 messages around it, so a person can review it. We also keep any chat mutes or chat bans on your account. When an account is banned from chat, we keep a scrambled (hashed) form of its Google Play Games account ID with the ban until the ban ends, at most 12 months, so the ban still applies if the same Google account comes back, even after deleting the account.</dd>
       <dt>Support requests</dt>
       <dd>When you contact support in the game, we keep your message (topic and text), your player ID and company name, and your game version and platform, so we can help you and answer in the game. If you add an email address to get an answer by email, we keep that too. Only the developer reads support requests.</dd>
+      <dt>Crash reports</dt>
+      <dd>If the game crashes, the next time you start it, it sends us the end of the game log from the session that crashed (about the last 250 lines), with your account ID, game version and platform, so we can find and fix the problem and match it to a support request. Emails, IP addresses, IDs and long numbers are hidden on your phone before anything is sent. At most 5 reports a day are sent, and only the developer reads them. You can turn this off in the game's settings with "Send crash reports".</dd>
       <dt>Server logs</dt>
       <dd>Technical logs of what the server did (such as save uploads, rewards and integrity results) with account IDs, and sometimes a connection's IP address in error messages. Our web server keeps no access logs.</dd>
     </dl>
@@ -51,6 +53,7 @@
     <ul class="points">
       <li><strong>To give you the game</strong> (performance of our contract with you): your account, cloud saves, alliances, chat, friends, rankings, events and support.</li>
       <li><strong>To keep the game fair and safe</strong> (our legitimate interests, and yours as a player): save checks, Play Integrity, server logs, reports, moderation and blocks.</li>
+      <li><strong>To fix problems</strong> (our legitimate interest in a game that works): crash reports. You can object at any time by turning off "Send crash reports".</li>
       <li><strong>To meet legal duties</strong>, such as handling reports of illegal content and telling players why we acted (the EU Digital Services Act).</li>
       <li><strong>With your consent</strong>: personalised ads, through Google's consent form (see Ads).</li>
     </ul>
@@ -75,7 +78,7 @@
       <li><strong>GitHub</strong> hosts this website and a small public file the game reads at start to check for updates; GitHub sees your IP address when the file is downloaded.</li>
       <li>Our uptime monitor only checks that the server answers, and our team chat on Discord only receives counts of open reports. Neither receives any player data.</li>
     </ul>
-    <p>Only the developer can access the server and the review of reports. We don't sell your data, we don't share it with advertisers, and we don't use analytics or crash-reporting services.</p>
+    <p>Only the developer can access the server and the review of reports. We don't sell your data, we don't share it with advertisers, and we don't use outside analytics or crash-reporting services: crash reports go only to our own server.</p>
   </section>
 
   <section>
@@ -86,6 +89,7 @@
       <li>Reports: until they are decided, then 6 more months (for appeals), then they are deleted.</li>
       <li>Weekly alliance tallies: 8 weeks. Weekly rankings and leagues reset every week.</li>
       <li>Support requests: until 12 months after they are closed.</li>
+      <li>Crash reports: 90 days.</li>
       <li>Server logs: at most 30 days.</li>
       <li>Chat bans: a hashed Google Play Games account ID with the ban, until the ban ends, at most 12 months (also after the account is deleted).</li>
       <li>Backups: encrypted, and kept for at most 3 months. Data you delete disappears from the backups when they expire.</li>
@@ -133,7 +137,7 @@
       <dt>A local copy of your save</dt><dd>So the game starts quickly and nothing is lost if the connection drops. Older test saves may be kept as a backup file.</dd>
       <dt>Your settings</dt><dd>Graphics level, interface size, sound, language, chat settings, and which version of this policy you have seen.</dd>
       <dt>Your ad choices</dt><dd>Stored on your device by Google's consent software.</dd>
-      <dt>A game log</dt><dd>The game's recent technical messages, with emails, IP addresses and IDs hidden. It's never sent anywhere; if the game crashes, you can choose to copy it and send it to us, for example in our Discord.</dd>
+      <dt>A game log</dt><dd>The game's recent technical messages, with emails, IP addresses and IDs hidden. It's only sent after a crash, as a crash report (see above). You can also copy it yourself and send it to us, for example in our Discord.</dd>
       <dt>Loading files and a shared picture</dt><dd>Prepared world data that helps the game start faster, and the last picture of your town you shared.</dd>
     </dl>
     <p>Uninstalling RushTown deletes all of this from your phone. It doesn't delete your account on our server; use Delete account for that.</p>
