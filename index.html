@@ -240,7 +240,8 @@
         var v = d[el.getAttribute("data-stat")];
         if (typeof v === "number") { el.textContent = v.toLocaleString("en-US"); shown++; }
       });
-      if (shown === 3) box.hidden = false;
+      // only once the numbers are worth showing
+      if (shown === 3 && d.companies >= 100) box.hidden = false;
     })
     .catch(function () {});
 })();
