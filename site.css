@@ -104,15 +104,15 @@ section.block.sand { background: var(--sand); }
 .cast { display: grid; grid-template-columns: 1fr; gap: 26px; align-items: center; }
 @media (min-width: 900px) { .cast { grid-template-columns: 5fr 6fr; } }
 .stage { position: relative; display: grid; place-items: center; }
-.stage .disc { width: min(400px, 80vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #FFE3B3, var(--orange) 72%); border: 5px solid var(--ink); box-shadow: var(--shadow); display: grid; place-items: end center; overflow: hidden; }
-.stage .disc img { width: 92%; height: auto; display: block; transition: opacity .2s; }
+.stage .disc { width: min(400px, 80vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #FFE3B3, var(--orange) 72%); border: 5px solid var(--ink); box-shadow: var(--shadow); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; margin: 0 auto; }
+.stage .disc img { width: 96%; height: auto; display: block; margin: 0 auto -2px; transition: opacity .2s; }
 .who .name { font-size: clamp(30px, 4.4vw, 44px); font-weight: 900; margin: 0; line-height: 1.05; }
 .who .role { font-weight: 800; color: var(--orange-deep); margin: 6px 0 16px; }
 .who blockquote { margin: 0 0 22px; padding: 18px 22px; background: var(--cream); border: 3px solid var(--ink); border-radius: 18px; font-size: 20px; font-weight: 700; position: relative; }
 .who blockquote::before { content: ""; position: absolute; left: 36px; top: -14px; width: 22px; height: 22px; background: var(--cream); border-left: 3px solid var(--ink); border-top: 3px solid var(--ink); transform: rotate(45deg); }
 .picker { display: flex; flex-wrap: wrap; gap: 10px; }
 .picker button { width: 64px; height: 64px; border-radius: 50%; border: 3px solid var(--ink); background: var(--sand); padding: 0; overflow: hidden; cursor: pointer; transition: transform .12s; }
-.picker button img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.picker button img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; transform: scale(1.15); transform-origin: center 30%; }
 .picker button:hover { transform: translateY(-3px); }
 .picker button[aria-pressed="true"] { background: var(--orange); box-shadow: 0 0 0 4px var(--cream), 0 0 0 7px var(--orange-deep); }
 
@@ -144,7 +144,7 @@ section.block.sand { background: var(--sand); }
 /* ---------- join ---------- */
 .join { text-align: center; }
 .join .box { background: var(--cream); border: 4px solid var(--ink); border-radius: 28px; padding: 40px 22px; box-shadow: var(--shadow); position: relative; }
-.join .box img.wren { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--ink); background: var(--orange); margin-top: -100px; object-fit: cover; object-position: top; }
+.join .box img.wren { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--ink); background: var(--orange); margin-top: -100px; object-fit: cover; object-position: center bottom; }
 .join .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 8px; }
 
 /* ---------- press (subpage) ---------- */
