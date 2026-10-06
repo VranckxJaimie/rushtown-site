@@ -3,109 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RushTown</title>
+<title>RushTown · A cozy logistics game</title>
 <meta name="description" content="RushTown is a cozy mobile logistics game: build production chains, run your own vans and trucks, and help the villages and towns of a river valley thrive.">
 <meta property="og:title" content="RushTown">
 <meta property="og:description" content="Run a cozy logistics company in a living valley. A mobile game for Android, in testing now.">
-<meta property="og:image" content="https://rushtowngame.com/media/logo.png">
+<meta property="og:image" content="https://rushtowngame.com/media/hero-small.jpg">
 <meta property="og:url" content="https://rushtowngame.com/">
 <meta name="theme-color" content="#FBE9D2">
 <link rel="icon" href="media/logo.png">
+<link rel="preload" as="image" href="media/hero.jpg">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<div class="page">
-  <header class="top">
+
+<header class="bar" id="bar">
+  <div class="wrap">
     <a href="./" aria-label="RushTown home"><img src="media/logo.png" alt="RushTown" width="85" height="44"></a>
     <nav aria-label="Main">
-      <a href="#features">The game</a>
-      <a href="#join">Join the test</a>
+      <a href="#game">The game</a>
+      <a href="#cast">Characters</a>
+      <a href="#news">News</a>
       <a href="press.html">Press</a>
     </nav>
-  </header>
+    <a class="btn primary pill" href="#join">Join the test</a>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>Run a cozy logistics company in a living valley.</h1>
-        <p class="pitch">Build production chains, send out your own vans and trucks, and keep the villages and towns of the valley supplied as households move in and homes move up.</p>
-        <div class="cta">
-          <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">Join the test on Google Play</a>
-          <a class="btn ghost" href="https://discord.gg/n6D7HrCAY">Join our Discord</a>
-        </div>
-        <p class="note">Free on Android, in closed testing now. Coming to iPhone at launch.</p>
-      </div>
-      <div class="media">
-        <!-- TRAILER: replace the placeholder with
-             <video src="media/trailer-loop.mp4" poster="media/trailer-poster.jpg" autoplay muted loop playsinline></video>
-             once the final cut is approved. -->
-        <div class="placeholder"><img src="media/logo.png" alt=""></div>
-      </div>
-    </section>
-
-    <section class="stats" id="stats" hidden aria-label="RushTown so far">
-      <div class="stat"><b data-stat="companies">–</b><span>companies founded</span></div>
-      <div class="stat"><b data-stat="alliances">–</b><span>alliances</span></div>
-      <div class="stat"><b data-stat="goods_this_week">–</b><span>goods delivered this week</span></div>
-    </section>
-
-    <section id="features">
-      <h2 class="section">The game</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Production chains</h3>
-          <p>Grain to flour to bread, sheep to wool to clothes. Every good has a chain, and every chain needs its places.</p>
-        </div>
-        <div class="feature">
-          <h3>Your own fleet</h3>
-          <p>Vans and trucks drive real roads between farms, workshops, warehouses and towns. You plan the routes.</p>
-        </div>
-        <div class="feature">
-          <h3>A valley full of characters</h3>
-          <p>Wren, your dispatcher, Gus the old trucker, Mrs. Pell the baker and a rival called Vance. Every place has its people and its story.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="shots-block" hidden>
-      <h2 class="section">Screenshots</h2>
-      <div class="shots"><!-- 1920x1080 stills go here: <img src="media/shot-1.jpg" alt="…" loading="lazy" width="1920" height="1080"> --></div>
-    </section>
-
-    <section class="join" id="join">
-      <h2>Play it before everyone else</h2>
-      <p>RushTown is in closed testing on Google Play. Join the test, play the newest builds, and tell us what feels fun, confusing or slow in our Discord.</p>
+<main>
+  <!-- HERO. When the trailer is final, swap the div.bg for:
+       <video class="bg" src="media/trailer-loop.mp4" poster="media/hero.jpg" autoplay muted loop playsinline></video> -->
+  <section class="hero">
+    <div class="bg" style="background-image:url('media/hero.jpg')" role="img" aria-label="Maplebrook, a village by the river"></div>
+    <div class="inner">
+      <img class="logo" src="media/logo.png" alt="RushTown" width="560" height="291">
+      <h1>Run a cozy logistics company in a living valley.</h1>
+      <p>Build production chains, send out your own vans and trucks, and keep the villages and towns supplied as households move in and homes move up.</p>
       <div class="cta">
-        <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">Join the test</a>
-        <a class="btn ghost" href="https://discord.gg/n6D7HrCAY">Discord</a>
+        <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg>
+          Join the test on Android</a>
+        <a class="btn cream" href="https://discord.gg/n6D7HrCAY">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H10l-4.6 3.7A.9.9 0 0 1 4 19V5.5z"/></svg>
+          Join our Discord</a>
       </div>
-    </section>
-  </main>
+      <small>Free on Android, in closed testing now · Coming to iPhone at launch</small>
+    </div>
+    <a class="scroll-cue" href="#game">EXPLORE</a>
+    <svg class="hills" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#FBE9D2" d="M0 58 C 160 18 300 22 430 48 S 700 92 860 56 S 1170 6 1300 34 S 1410 60 1440 52 V90 H0 Z"/></svg>
+  </section>
 
-  <footer>
-    <nav aria-label="Footer">
-      <a href="press.html">Press kit</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="delete-account.html">Delete account</a>
-      <a href="mailto:jaimievranckx@gmail.com">Contact</a>
-    </nav>
-    <p>RushTown is made by Jaimie Vranckx in Antwerp, Belgium. Icons, portraits, the logo and the music are made with AI tools, with care.</p>
+  <!-- FEATURES -->
+  <section class="block" id="game">
+    <div class="wrap">
+      <span class="eyebrow">The game</span>
+      <h2 class="title">From the first farm to a whole valley</h2>
+      <p class="lede">Start with one village and a single van. Grow a company that keeps villages, towns and a harbour city supplied, one delivery at a time.</p>
+      <div class="slides">
+        <div class="track" id="track">
+          <article class="slide" id="s1">
+            <figure><img src="media/shots/chains.jpg" alt="Farms and workshops by the river" loading="lazy" width="1600" height="900"></figure>
+            <div><span class="num">01 / 04</span><h3>Production chains</h3><p>Grain to flour to bread, sheep to wool to clothes. Every good has a chain, and every chain needs its places. Mills by the river even work faster.</p></div>
+          </article>
+          <article class="slide" id="s2">
+            <figure><img src="media/shots/fleet.jpg" alt="Vans driving through a village" loading="lazy" width="1600" height="900"></figure>
+            <div><span class="num">02 / 04</span><h3>Your own fleet</h3><p>Vans and trucks drive real roads between farms, workshops, warehouses and towns. You plan the routes, stop by stop.</p></div>
+          </article>
+          <article class="slide" id="s3">
+            <figure><img src="media/shots/homes.jpg" alt="A town with flats and apartments" loading="lazy" width="1600" height="900"></figure>
+            <div><span class="num">03 / 04</span><h3>Homes move up</h3><p>Households move in when you keep them supplied. Bring the right goods and building materials, and homes climb their ladder all the way to tower villas.</p></div>
+          </article>
+          <article class="slide" id="s4">
+            <figure><img src="media/shots/valley.jpg" alt="The whole river valley with its route lines" loading="lazy" width="1600" height="900"></figure>
+            <div><span class="num">04 / 04</span><h3>A valley to open up</h3><p>New villages and towns come out from under the clouds as your homes move up, from the hills down to the sea.</p></div>
+          </article>
+        </div>
+        <div class="controls">
+          <button class="arrow" id="prev" aria-label="Previous">‹</button>
+          <button class="arrow" id="next" aria-label="Next">›</button>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS -->
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="background:#FBE9D2"><path fill="#F5D9AE" d="M0 30 C 240 0 480 0 720 26 S 1200 60 1440 22 V60 H0 Z"/></svg>
+  <section class="block sand" id="cast">
+    <div class="wrap">
+      <span class="eyebrow">Characters</span>
+      <h2 class="title">Meet the valley</h2>
+      <p class="lede">Every place has its people, and every one of them has an opinion about your little orange vans.</p>
+      <div class="cast">
+        <div class="stage"><div class="disc"><img id="cast-img" src="media/cast/wren.png" alt="" width="384" height="384"></div></div>
+        <div class="who">
+          <p class="name" id="cast-name">Wren</p>
+          <p class="role" id="cast-role">Your dispatcher</p>
+          <blockquote id="cast-quote">I do the paperwork, you decide, and the vans do the work.</blockquote>
+          <div class="picker" id="picker" role="group" aria-label="Choose a character"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="background:#F5D9AE"><path fill="#6d8f4a" d="M0 34 C 300 64 560 10 820 28 S 1240 54 1440 20 V60 H0 Z"/></svg>
+
+  <!-- VALLEY BAND + STATS -->
+  <section class="valley" style="background-image:url('media/shots/valley.jpg')">
+    <div class="wrap">
+      <h2>From the hills down to the sea</h2>
+      <p>A winding river valley of villages, towns and Kings Harbour on the coast. Start far upriver and work your way down to the sea.</p>
+      <div class="stats" id="stats" hidden aria-label="RushTown so far">
+        <div class="stat"><b data-stat="companies">–</b><span>companies founded</span></div>
+        <div class="stat"><b data-stat="alliances">–</b><span>alliances</span></div>
+        <div class="stat"><b data-stat="goods_this_week">–</b><span>goods delivered this week</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <span class="eyebrow">News</span>
+      <h2 class="title">Latest updates</h2>
+      <div class="news">
+        <a class="card" href="https://discord.gg/n6D7HrCAY">
+          <img src="media/shots/fleet.jpg" alt="" loading="lazy" width="1600" height="900">
+          <div><time datetime="2026-10-05">5 Oct 2026</time><h3>Build 6: crash logs</h3><p>If the game ever closes, copy its log in one tap and send it to us in Discord.</p></div>
+        </a>
+        <a class="card" href="https://discord.gg/n6D7HrCAY">
+          <img src="media/shots/homes.jpg" alt="" loading="lazy" width="1600" height="900">
+          <div><time datetime="2026-10-04">4 Oct 2026</time><h3>Build 4: quality of life</h3><p>A new build bar, Anno-style statistics, trend marks on needs and homes that move up by themselves.</p></div>
+        </a>
+        <a class="card" href="https://discord.gg/n6D7HrCAY">
+          <img src="media/shots/valley.jpg" alt="" loading="lazy" width="1600" height="900">
+          <div><time datetime="2026-10-04">4 Oct 2026</time><h3>Build 3: the river valley</h3><p>A brand-new map down to the sea, fish and riverside mills, vans and trucks, and the story all the way to the end.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="block join" id="join">
+    <div class="wrap">
+      <div class="box">
+        <img class="wren" src="media/cast/wren.png" alt="" width="120" height="120">
+        <h2 class="title">Play it before everyone else</h2>
+        <p class="lede" style="margin:0 auto 20px">RushTown is in closed testing on Google Play. Join the test, play the newest builds first, and tell us what feels fun, confusing or slow.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">Join the test</a>
+          <a class="btn cream" href="https://discord.gg/n6D7HrCAY">Join our Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <img src="media/logo.png" alt="RushTown" width="92" height="48">
+      <nav aria-label="Footer">
+        <a href="press.html">Press kit</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="delete-account.html">Delete account</a>
+        <a href="mailto:jaimievranckx@gmail.com">Contact</a>
+      </nav>
+    </div>
+    <p>RushTown is made by Jaimie Vranckx in Antwerp, Belgium. Icons, portraits, the logo and the music are made with AI tools, with care. Screens shown are from the game in development.</p>
     <p>This site uses no cookies and no trackers.</p>
-  </footer>
-</div>
+  </div>
+</footer>
+
 <script>
 (function () {
+  // header turns solid after the hero
+  var bar = document.getElementById("bar");
+  function onScroll() { bar.classList.toggle("solid", window.scrollY > window.innerHeight * 0.55); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // feature slideshow
+  var track = document.getElementById("track");
+  var slides = Array.prototype.slice.call(track.children);
+  var dots = document.getElementById("dots");
+  slides.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.setAttribute("aria-label", "Slide " + (i + 1));
+    b.addEventListener("click", function () { go(i); });
+    dots.appendChild(b);
+  });
+  function current() { return Math.round(track.scrollLeft / track.clientWidth); }
+  function go(i) { i = (i + slides.length) % slides.length; track.scrollTo({ left: i * (track.clientWidth + 18), behavior: "smooth" }); }
+  function mark() { var c = current(); Array.prototype.forEach.call(dots.children, function (d, i) { d.setAttribute("aria-current", i === c ? "true" : "false"); }); }
+  document.getElementById("prev").addEventListener("click", function () { go(current() - 1); });
+  document.getElementById("next").addEventListener("click", function () { go(current() + 1); });
+  track.addEventListener("scroll", function () { window.requestAnimationFrame(mark); }, { passive: true });
+  mark();
+
+  // characters
+  var cast = [
+    ["wren", "Wren", "Your dispatcher", "I do the paperwork, you decide, and the vans do the work."],
+    ["gus", "Gus Harrow", "Old hand of the haulage trade", "Round and round. That's all hauling is, kid. Mind the duck pond."],
+    ["pell", "Mrs. Pell", "The baker", "You grow the grain, I'll do the rest. Mostly the rest is flour."],
+    ["mayor", "Mayor Bramble", "Mayor of your home village", "Since the old firm folded, we've lived off the Tuesday market van."],
+    ["edna", "Edna Quill", "Editor, the Sandbury Courier", "'MYSTERIOUS ORANGE VANS SIGHTED ON VALLEY ROAD.' Too long. 'VANS!'"],
+    ["bram", "Bram Hollis", "Dairy farmer", "Little Lou is bigger than Big Lou. Don't mention it to her."],
+    ["silas", "Silas Crane", "Distiller", "You run a tidy little operation. I'd like to make it a lucrative one."],
+    ["vance", "Vance Hartley", "Hartley Freight", "Lovely little vans. Orange. Brave choice."],
+    ["flint", "Captain Flint", "Harbourmaster", "Mind the gulls. They work for nobody."],
+    ["augusta", "Lady Augusta", "Of Kings Harbour", "One simply cannot live in a Loft without cake."]
+  ];
+  var picker = document.getElementById("picker"), img = document.getElementById("cast-img");
+  var nameEl = document.getElementById("cast-name"), roleEl = document.getElementById("cast-role"), quoteEl = document.getElementById("cast-quote");
+  cast.forEach(function (c, i) {
+    var b = document.createElement("button");
+    b.setAttribute("aria-label", c[1]);
+    b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    b.innerHTML = '<img src="media/cast/' + c[0] + '.png" alt="" width="64" height="64" loading="lazy">';
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(picker.children, function (x) { x.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+      img.style.opacity = 0;
+      setTimeout(function () { img.src = "media/cast/" + c[0] + ".png"; img.style.opacity = 1; }, 150);
+      nameEl.textContent = c[1]; roleEl.textContent = c[2]; quoteEl.textContent = c[3];
+    });
+    picker.appendChild(b);
+  });
+
+  // live totals from the game server (hidden until all three arrive)
   var box = document.getElementById("stats");
-  function fmt(n) { return typeof n === "number" ? n.toLocaleString("en-US") : null; }
   fetch("https://api.rushtowngame.com/public/stats.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) {
       if (!d) return;
       var shown = 0;
       box.querySelectorAll("[data-stat]").forEach(function (el) {
-        var v = fmt(d[el.getAttribute("data-stat")]);
-        if (v !== null) { el.textContent = v; shown++; }
+        var v = d[el.getAttribute("data-stat")];
+        if (typeof v === "number") { el.textContent = v.toLocaleString("en-US"); shown++; }
       });
       if (shown === 3) box.hidden = false;
     })
