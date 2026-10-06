@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RushTown</title>
+<meta name="description" content="RushTown is a cozy mobile logistics game: build production chains, run your own vans and trucks, and help the villages and towns of a river valley thrive.">
+<meta property="og:title" content="RushTown">
+<meta property="og:description" content="Run a cozy logistics company in a living valley. A mobile game for Android, in testing now.">
+<meta property="og:image" content="https://rushtowngame.com/media/logo.png">
+<meta property="og:url" content="https://rushtowngame.com/">
+<meta name="theme-color" content="#FBE9D2">
+<link rel="icon" href="media/logo.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <a href="./" aria-label="RushTown home"><img src="media/logo.png" alt="RushTown" width="85" height="44"></a>
+    <nav aria-label="Main">
+      <a href="#features">The game</a>
+      <a href="#join">Join the test</a>
+      <a href="press.html">Press</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Run a cozy logistics company in a living valley.</h1>
+        <p class="pitch">Build production chains, send out your own vans and trucks, and keep the villages and towns of the valley supplied as households move in and homes move up.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">Join the test on Google Play</a>
+          <a class="btn ghost" href="https://discord.gg/n6D7HrCAY">Join our Discord</a>
+        </div>
+        <p class="note">Free on Android, in closed testing now. Coming to iPhone at launch.</p>
+      </div>
+      <div class="media">
+        <!-- TRAILER: replace the placeholder with
+             <video src="media/trailer-loop.mp4" poster="media/trailer-poster.jpg" autoplay muted loop playsinline></video>
+             once the final cut is approved. -->
+        <div class="placeholder"><img src="media/logo.png" alt=""></div>
+      </div>
+    </section>
+
+    <section class="stats" id="stats" hidden aria-label="RushTown so far">
+      <div class="stat"><b data-stat="companies">–</b><span>companies founded</span></div>
+      <div class="stat"><b data-stat="alliances">–</b><span>alliances</span></div>
+      <div class="stat"><b data-stat="goods_this_week">–</b><span>goods delivered this week</span></div>
+    </section>
+
+    <section id="features">
+      <h2 class="section">The game</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Production chains</h3>
+          <p>Grain to flour to bread, sheep to wool to clothes. Every good has a chain, and every chain needs its places.</p>
+        </div>
+        <div class="feature">
+          <h3>Your own fleet</h3>
+          <p>Vans and trucks drive real roads between farms, workshops, warehouses and towns. You plan the routes.</p>
+        </div>
+        <div class="feature">
+          <h3>A valley full of characters</h3>
+          <p>Wren, your dispatcher, Gus the old trucker, Mrs. Pell the baker and a rival called Vance. Every place has its people and its story.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shots-block" hidden>
+      <h2 class="section">Screenshots</h2>
+      <div class="shots"><!-- 1920x1080 stills go here: <img src="media/shot-1.jpg" alt="…" loading="lazy" width="1920" height="1080"> --></div>
+    </section>
+
+    <section class="join" id="join">
+      <h2>Play it before everyone else</h2>
+      <p>RushTown is in closed testing on Google Play. Join the test, play the newest builds, and tell us what feels fun, confusing or slow in our Discord.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://play.google.com/apps/testing/com.jvranckx.rushtown">Join the test</a>
+        <a class="btn ghost" href="https://discord.gg/n6D7HrCAY">Discord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Footer">
+      <a href="press.html">Press kit</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="delete-account.html">Delete account</a>
+      <a href="mailto:jaimievranckx@gmail.com">Contact</a>
+    </nav>
+    <p>RushTown is made by Jaimie Vranckx in Antwerp, Belgium. Icons, portraits, the logo and the music are made with AI tools, with care.</p>
+    <p>This site uses no cookies and no trackers.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var box = document.getElementById("stats");
+  function fmt(n) { return typeof n === "number" ? n.toLocaleString("en-US") : null; }
+  fetch("https://api.rushtowngame.com/public/stats.json", { cache: "no-store" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d) return;
+      var shown = 0;
+      box.querySelectorAll("[data-stat]").forEach(function (el) {
+        var v = fmt(d[el.getAttribute("data-stat")]);
+        if (v !== null) { el.textContent = v; shown++; }
+      });
+      if (shown === 3) box.hidden = false;
+    })
+    .catch(function () {});
+})();
+</script>
+</body>
+</html>
